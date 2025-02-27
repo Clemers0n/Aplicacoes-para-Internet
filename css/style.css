@@ -1,0 +1,48 @@
+/* Classes Globais */
+* {
+  margin: 0;
+  padding: 0;
+}
+/* Classes Clemerson */
+.c-body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.c-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.c-nav {
+  background-color: #6e6e6e;
+}
+.c-nav ul {
+  display: flex;
+  list-style: none;
+}
+.c-nav li {
+  padding: 10px;
+}
+.c-nav li:hover {
+  background-color: #464646;
+  transition: 0.3s;
+}
+.c-nav li.active {
+  background-color: #464646;
+  pointer-events: none;
+}
+.c-nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.c-footer {
+  background-color: #6e6e6e;
+  color: white;
+  text-align: center;
+  padding: 5px;
+}
+/* Classes Gustavo */
+
+/* Classes Nathan */
