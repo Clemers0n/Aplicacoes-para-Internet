@@ -21,26 +21,26 @@
           </ul>
         </nav>
       </header>
-      <section>
+      <section class="c-section">
         <div class="c-pokedex">
+          <div class="c-pokedex-search">
+            <button id="prev"><-</button>
+            <form id="form">
+              <input
+                id="name"
+                list="list"
+                type="text"
+                placeholder="Digite o nome do pokemon"
+                autocomplete="off"
+              />
+              <datalist id="list"> </datalist>
+            </form>
+            <button id="next">-></button>
+          </div>
           <img id="sprite" src="" alt="" />
           <div class="c-pokedex-types">
             <p id="type1"></p>
             <p id="type2"></p>
-          </div>
-          <form id="form" action="">
-            <input
-              id="name"
-              list="list"
-              type="text"
-              placeholder="Digite o nome do pokemon"
-            />
-            <datalist id="list"> </datalist>
-            <button type="submit">Buscar</button>
-          </form>
-          <div>
-            <button id="prev"><-</button>
-            <button id="next">-></button>
           </div>
         </div>
       </section>

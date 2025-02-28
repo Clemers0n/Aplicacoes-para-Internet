@@ -6,16 +6,18 @@
 /* Classes Clemerson */
 .c-body {
   font-family: Arial, Helvetica, sans-serif;
+  background-image: url("../img/clemerson/background.png");
+  background-size: cover;
+  background-position: center;
 }
 .c-container {
+  flex-direction: column;
   height: 100vh;
-  margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .c-header {
-  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -43,30 +45,51 @@
   text-decoration: none;
   font-size: 16px;
 }
+.c-section {
+  display: flex;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  max-width: 700px;
+}
 .c-pokedex {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: red;
-  padding: 10px;
   border-radius: 10px;
+  height: 75%;
+  width: 75%;
+}
+.c-pokedex-search {
+  display: flex;
+}
+.c-pokedex-search input {
+  text-transform: uppercase;
+  text-align: center;
 }
 .c-pokedex img {
-  height: auto;
-  max-width: 100%;
+  image-rendering: pixelated;
+  width: 30vh;
+  max-width: 300px;
   background-color: white;
   border-radius: 10px;
+  margin: 10px;
 }
 .c-pokedex-types {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 .c-pokedex-types p {
   color: white;
-  padding: 2px 4px;
+  padding: 4px 0px;
   border-radius: 4px;
   border: 1px solid rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 80px;
+  text-transform: uppercase;
 }
 .c-normal {
   background-color: #aa9;
@@ -123,8 +146,6 @@
   background-color: #e9e;
 }
 .c-footer {
-  position: fixed;
-  bottom: 0;
   background-color: #6e6e6e;
   color: white;
   text-align: center;

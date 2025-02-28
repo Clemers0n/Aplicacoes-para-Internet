@@ -18,14 +18,14 @@ async function update(busca) {
 
   const pokemon = await getPokemon(busca);
   sprite.src = pokemon.sprites.front_default;
-  sprite.alt = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
-  name.value = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
-  type1.innerHTML = pokemon.types[0].type.name.toUpperCase();
+  sprite.alt = pokemon.name
+  name.value = pokemon.name
+  type1.innerHTML = pokemon.types[0].type.name
   type1.className = "c-"+pokemon.types[0].type.name
 
   if (pokemon.types.length > 1) {
     type2.style.display = 'block';
-    type2.innerHTML = pokemon.types[1].type.name.toUpperCase();
+    type2.innerHTML = pokemon.types[1].type.name
     type2.className = "c-"+pokemon.types[1].type.name
   } else {
     type2.style.display = 'none';
