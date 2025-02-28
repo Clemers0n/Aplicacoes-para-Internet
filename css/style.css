@@ -7,8 +7,15 @@
 .c-body {
   font-family: Arial, Helvetica, sans-serif;
 }
+.c-container {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .c-header {
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -27,7 +34,7 @@
   background-color: #464646;
   transition: 0.3s;
 }
-.c-nav li.active {
+.c-nav li.c-active {
   background-color: #464646;
   pointer-events: none;
 }
@@ -36,13 +43,95 @@
   text-decoration: none;
   font-size: 16px;
 }
-
+.c-pokedex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  padding: 10px;
+  border-radius: 10px;
+}
+.c-pokedex img {
+  height: auto;
+  max-width: 100%;
+  background-color: white;
+  border-radius: 10px;
+}
+.c-pokedex-types {
+  display: flex;
+  justify-content: space-between;
+}
+.c-pokedex-types p {
+  color: white;
+  padding: 2px 4px;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+.c-normal {
+  background-color: #aa9;
+}
+.c-fighting {
+  background-color: #b54;
+}
+.c-flying {
+  background-color: #89f;
+}
+.c-poison {
+  background-color: #a59;
+}
+.c-ground {
+  background-color: #db5;
+}
+.c-rock {
+  background-color: #ba6;
+}
+.c-bug {
+  background-color: #ab2;
+}
+.c-ghost {
+  background-color: #66b;
+}
+.c-steel {
+  background-color: #aab;
+}
+.c-fire {
+  background-color: #f42;
+}
+.c-water {
+  background-color: #39f;
+}
+.c-grass {
+  background-color: #7c5;
+}
+.c-electric {
+  background-color: #fc3;
+}
+.c-psychic {
+  background-color: #f59;
+}
+.c-ice {
+  background-color: #6cf;
+}
+.c-dragon {
+  background-color: #76e;
+}
+.c-dark {
+  background-color: #754;
+}
+.c-fairy {
+  background-color: #e9e;
+}
 .c-footer {
+  position: fixed;
+  bottom: 0;
   background-color: #6e6e6e;
   color: white;
   text-align: center;
-  padding: 5px;
+  width: 100%;
+  padding: 5px 0px;
 }
+
 /* Classes Gustavo */
 
 /* Classes Kaua */
