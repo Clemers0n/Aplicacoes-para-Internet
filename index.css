@@ -1,0 +1,74 @@
+.bot{
+padding: 5px 50px;  
+width: 80px;  
+color: #000000;  
+background: #d8d400; 
+border: 1px solid #523131;  
+border-radius: 5px;   
+text-align: center;  
+user-select: none;  
+cursor: pointer;  
+}
+
+.bot:hover 
+{  
+    background: #fffb00; 
+    transition: background 0,5s;  
+}
+
+.btn
+{
+    
+    padding: 5px 50px;  
+    width: 80px;  
+    color: #000000;  
+    background: #3b802d;  
+    border: 1px solid #523131;  
+    border-radius: 5px;   
+    text-align: center;  
+    user-select: none;  
+    cursor: pointer; 
+    position: center;
+}
+.btn:hover
+{
+    background: #1eb300;
+    transition: background 0,5s;
+}
+
+.bnt
+{
+    padding: 5px 50px;  
+    width: 80px;  
+    color: #000000;  
+    background: rgb(199, 170, 3);
+    border: 1px solid #523131;  
+    border-radius: 5px;   
+    text-align: center;  
+    user-select: none;  
+    cursor: pointer; 
+}
+
+.bnt:hover
+{
+    background: #ffca3a;  
+    transition: background 0.5s;
+}
+
+
+
+nav a {  
+    color: #fff;  
+    float: right;  
+    text-decoration: none;  
+    display: block;  
+    padding: 14px 16px;  
+}  
+nav a:hover {  
+    transition: 0.5s;  
+    background-color: #e4e4e4;  
+    color: #333;  }
+
+    .pg {
+        text-align: start,left;
+    }
