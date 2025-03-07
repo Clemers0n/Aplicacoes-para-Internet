@@ -217,7 +217,7 @@
   object-fit: cover;
 }
 
-.g-menu{
+.g-menu {
   width: 90%;
   display: flex;
   justify-content: space-around;
@@ -255,7 +255,7 @@
   object-fit: cover;
 }
 
-.g-asd{
+.g-asd {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -266,3 +266,37 @@
 /* Classes Kaua */
 
 /* Classes Nathan */
+
+.n-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border: green 10px solid;
+}
+.n-container-card {
+  border: #000 3px solid;
+  display: flex;
+  flex-direction: row;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3%;
+}
+
+.n-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-right: 30px;
+  margin-left: 30px;
+  border: red 3px solid;
+}
+
+.n-img-card {
+  width: 300px;
+  height: 300px;
+}
