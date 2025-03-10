@@ -7,20 +7,45 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body class="c-body">
-    <header class="c-header">
-      <nav class="c-nav">
-        <ul>
-          <li><a href="./index.html">Home</a></li>
-          <li class="active"><a href="./clemerson-page.html" >Clemerson</a></li>
-          <li><a href="./gustavo-page.html">Gustavo</a></li>
-          <li><a href="./nathan-page.html">Nathan</a></li>
-        </ul>
-      </nav>
-    </header>
-    <section>
-    </section>
-    <footer class="c-footer"><p>Clemerson dos Santos &copy 2025</p></footer>
-
+    <div class="c-container">
+      <header class="c-header">
+        <nav class="c-nav">
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li class="c-active">
+              <a href="./clemerson-page.html">Clemerson</a>
+            </li>
+            <li><a href="./gustavo-page.html">Gustavo</a></li>
+            <li><a href="./kaua-page.html">Kauã</a></li>
+            <li><a href="./nathan-page.html">Nathan</a></li>
+          </ul>
+        </nav>
+      </header>
+      <section class="c-section">
+        <div class="c-pokedex">
+          <div class="c-pokedex-search">
+            <button id="prev"><-</button>
+            <form id="form">
+              <input
+                id="name"
+                list="list"
+                type="text"
+                placeholder="Digite o nome do pokemon"
+                autocomplete="off"
+              />
+              <datalist id="list"> </datalist>
+            </form>
+            <button id="next">-></button>
+          </div>
+          <img id="sprite" src="" alt="" />
+          <div class="c-pokedex-types">
+            <p id="type1"></p>
+            <p id="type2"></p>
+          </div>
+        </div>
+      </section>
+      <footer class="c-footer"><p>Clemerson dos Santos &copy 2025</p></footer>
+    </div>
     <!-- JavaScript -->
     <script src="./js/clemerson.js"></script>
   </body>
