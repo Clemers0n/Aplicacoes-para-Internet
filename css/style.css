@@ -264,7 +264,45 @@
 }
 
 /* Classes Kaua */
+.k-body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.k-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.k-nav {
+  background-color: #6e6e6e;
+}
+.k-nav ul {
+  display: flex;
+  list-style: none;
+}
+.k-nav li {
+  padding: 10px;
+}
+.k-nav li:hover {
+  background-color: #464646;
+  transition: 0.3s;
+}
+.k-nav li.active {
+  background-color: #464646;
+  pointer-events: none;
+}
+.k-nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
 
+.k-footer {
+  background-color: #6e6e6e;
+  color: white;
+  text-align: center;
+  padding: 5px;
+}
 /* Classes Nathan */
 
 .n-container {
