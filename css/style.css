@@ -157,7 +157,8 @@
 
 .g-body {
   background-color: #fff;
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  /* font-family: "Comic Sans MS", "Comic Sans", cursive; */
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-style: normal;
   font-variation-settings: "wdth" 100;
 }
@@ -181,15 +182,15 @@
 }
 
 .g-header-2 {
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #f3fff5;
+  background-color: #fff;
 }
 
 .g-nav {
-  background-color: #f3fff5;
+  background-color: #fff;
   width: 80%;
   display: flex;
   justify-content: center;
@@ -233,7 +234,7 @@
   align-items: center;
   width: 80%;
   height: 75vh;
-  border: #464646 solid 1px;
+  /* border: #464646 solid 1px; */
   object-fit: cover;
   margin: 2.5%;
 }
@@ -245,7 +246,7 @@
   width: 100%;
   height: 88vh;
   background-color: #f3fff5;
-  border: #464646 solid 1px;
+  /* border: #464646 solid 1px; */
   object-fit: cover;
 }
 
