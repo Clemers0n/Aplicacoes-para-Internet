@@ -271,7 +271,6 @@
   background-color: #fff;
   margin: auto;
 }
-
 .g-nav {
   background-color: #fff;
   width: 100%;
@@ -280,9 +279,9 @@
   justify-content: center;
   align-items: center;
   justify-content: space-between;
+  /* position: fixed; */
   border-radius: 0px 0px 15px 15px;
-  position: fixed;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 .g-nav ul {
   display: flex;
@@ -324,6 +323,7 @@
 .g-cart {
   font-size: 24px;
 }
+
 
 /* fim header */
 
@@ -466,10 +466,10 @@
   margin: 2.5% 0;
   background-color: #498c55;
   color: #fff;
-  padding: 1%;
+  padding: 1.5%;
   border-radius: 50%;
   text-align: center;
-  width: 17%;
+  width: 55px;
 }
 .g-text-card h2 {
   font-size: 24px;
