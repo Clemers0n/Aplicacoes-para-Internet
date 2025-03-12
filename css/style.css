@@ -237,7 +237,7 @@
 
 /* fim header */
 
-/* container */
+/* modelo de container */
 
 .g-container {
   display: flex;
@@ -247,6 +247,8 @@
   width: 100%;
   overflow: hidden;
 }
+
+/* conteudo inicial do site */
 
 .g-main {
   display: flex;
@@ -267,13 +269,17 @@
   height: 100%;
 }
 
+.g-content img {
+  border-radius: 25px;
+}
+
 .g-title {
   font-size: 44px;
   font-weight: bold;
   color: #30322f;
 }
 .g-title span {
-  color: #498C55;
+  color: #498c55;
   text-decoration: underline;
 }
 
@@ -285,7 +291,7 @@
 .g-button {
   width: 20%;
   height: 10%;
-  background-color: #498C55;
+  background-color: #498c55;
   font-size: 24px;
   border-radius: 25px;
   margin-top: 5%;
@@ -312,6 +318,8 @@
   height: 50px;
   object-fit: cover;
 }
+
+/* fim conteudo inicial do site */
 
 .g-content-2 {
   display: flex;
@@ -390,15 +398,14 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  
 }
 
-  .n-container {
-    font-family: Arial, Helvetica, sans-serif;
-    background-image: url("../img/nathan/operacoes-na-Bolsa-de-Valores.png");
-    background-size: cover;
-    background-position: center;
-  }
+.n-container {
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url("../img/nathan/operacoes-na-Bolsa-de-Valores.png");
+  background-size: cover;
+  background-position: center;
+}
 
 .n-container-card {
   background-color: rgb(65, 65, 65);
@@ -422,7 +429,6 @@
   border-radius: 30px;
   overflow: hidden;
   border: red 3px solid;
-
 }
 
 .n-img-card {
@@ -438,5 +444,5 @@
 
 .n-link:hover {
   color: #ffffff;
-  transition: 0.5s
+  transition: 0.5s;
 }
