@@ -1,15 +1,58 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pagina Principal</title>
     <link rel="stylesheet" href="./css/style.css" />
-</head>
-<body>
-    <a href="./clemerson-page.html">Clemerson</a>
-    <a href="./gustavo-page.html">Gustavo</a>
-    <a href="./kaua-page.html">Kauã</a>
-    <a href="./nathan-page.html">Nathan</a>
-</body>
+  </head>
+  <body class="body">
+    <header class="c-header">
+      <nav class="c-nav">
+        <ul>
+          <li class="c-active"><a href="./index.html">Home</a></li>
+          <li><a href="./clemerson-page.html">Clemerson</a></li>
+          <li><a href="./gustavo-page.html">Gustavo</a></li>
+          <li><a href="./kaua-page.html">Kauã</a></li>
+          <li><a href="./nathan-page.html">Nathan</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="carousel">
+      <button class="button prev">&#10094;</button>
+      <div class="slides">
+        <div class="slide">
+          <img src="./img/home/clemerson.png" alt="Imagem 1" />
+          <div class="caption">
+            <h1>Pokedex</h1>
+            <p>Um buscador de pokemon simples</p>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="./img/home/gustavo.png" alt="Imagem 2" />
+          <div class="caption">
+            <h1>Titulo</h1>
+            <p>Descrição do site</p>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="./img/home/gustavo.png" alt="Imagem 3" />
+          <div class="caption">
+            <h1>Titulo</h1>
+            <p>Descrição do site</p>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="./img/home/nathan.png" alt="Imagem 4" />
+          <div class="caption">
+            <h1>Titulo</h1>
+            <p>Descrição do site</p>
+          </div>
+        </div>
+      </div>
+      <button class="button next">&#10095;</button>
+    </div>
+    <div class="indicators"></div>
+    <script src="./js/home.js"></script>
+  </body>
 </html>
