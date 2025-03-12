@@ -1,7 +1,77 @@
 /* Classes Globais */
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+.body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 1080px;
+  margin: auto;
+  overflow: hidden;
+}
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+.slide {
+  min-width: 100%;
+  position: relative;
+}
+.slide img {
+  width: 100%;
+  display: block;
+}
+.caption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+.indicators {
+  text-align: center;
+  margin-top: 10px;
+}
+.indicator {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 5px;
+  background: gray;
+  border: #0000008e 1px solid;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.active {
+  background: white;
+}
+.button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+.prev {
+  left: 10px;
+  z-index: 1;
+}
+.next {
+  right: 10px;
 }
 /* Classes Clemerson */
 .c-body {
@@ -65,24 +135,42 @@
 }
 .c-pokedex-search {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.c-pokedex-search button {
+  width: 35px;
+  height: 35px;
+  background-color: #cdcdcd;
+  border: 0px;
 }
 .c-pokedex-search input {
   text-transform: uppercase;
   text-align: center;
+  width: 50%;
+  height: 35px;
+  border: 0px;
+  background-color: white;
+}
+.c-pokedex-search input:focus {
+  outline: none;
+  border: 2px solid transparent;
 }
 .c-pokedex img {
   image-rendering: pixelated;
-  width: 30vh;
-  max-width: 300px;
+  padding: 10px;
+  width: 300px;
   background-color: white;
   border-radius: 10px;
   margin: 10px;
 }
 .c-pokedex-types {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
+  width: 50%;
 }
-.c-pokedex-types p {
+.c-pokedex-types div {
   color: white;
   padding: 4px 0px;
   border-radius: 4px;
@@ -156,12 +244,90 @@
 /* Classes Gustavo */
 
 .g-body {
-  background-color: #fff;
+  background-color: #fdfdfd;
   /* font-family: "Comic Sans MS", "Comic Sans", cursive; */
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-style: normal;
   font-variation-settings: "wdth" 100;
+  overflow-x: hidden;
 }
+
+/* header */
+
+.g-header {
+  font-family: Arial, Helvetica, sans-serif;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: none;
+  background-color: #f5fff2;
+}
+
+.g-header-2 {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 75%;
+  background-color: #fff;
+  margin: auto;
+}
+
+.g-nav {
+  background-color: #fff;
+  width: 100%;
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 0px 0px 15px 15px;
+  position: fixed;
+  border: 1px solid black;
+}
+.g-nav ul {
+  display: flex;
+  list-style: none;
+}
+
+.g-nav li {
+  padding: 10px;
+}
+
+.g-nav a {
+  color: #000;
+  text-decoration: none;
+  font-size: 16px;
+  text-align: center;
+}
+
+.g-logo {
+  width: 15%;
+  height: 50px;
+  object-fit: cover;
+  /* border: 1px solid black; */
+}
+
+.g-menu {
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+  /* border: 1px solid black; */
+}
+
+.g-icons {
+  display: flex;
+  width: 15%;
+  justify-content: end;
+  /* border: 1px solid red; */
+}
+
+.g-cart {
+  font-size: 24px;
+}
+
+/* fim header */
+
+/* modelo de container */
 
 .g-container {
   display: flex;
@@ -172,82 +338,58 @@
   overflow: hidden;
 }
 
-.g-header {
-  font-family: Arial, Helvetica, sans-serif;
-  top: 0;
-  left: 0;
-  width: 100%;
-  display: none;
-  background-color: #f3fff5;
-}
-
-.g-header-2 {
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #fff;
-}
-
-.g-nav {
-  background-color: #fff;
-  width: 80%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  justify-content: space-between;
-  margin: auto;
-}
-.g-nav ul {
-  display: flex;
-  list-style: none;
-}
-.g-nav li {
-  padding: 10px;
-}
-
-.g-nav a {
-  color: #000;
-  text-decoration: none;
-  font-size: 16px;
-}
-
-.g-logo {
-  width: 10%;
-  height: 50px;
-  object-fit: cover;
-}
-
-.g-menu {
-  width: 90%;
-  display: flex;
-  justify-content: space-around;
-}
-
-.g-icons {
-  width: 10%;
-}
+/* conteudo inicial do site */
 
 .g-main {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80%;
+  width: 75%;
   height: 75vh;
   /* border: #464646 solid 1px; */
   object-fit: cover;
   margin: 2.5%;
 }
 
-.g-main-2 {
+.g-content {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 88vh;
-  background-color: #f3fff5;
-  /* border: #464646 solid 1px; */
-  object-fit: cover;
+  width: 50%;
+  height: 100%;
+}
+
+.g-content img {
+  border-radius: 25px;
+}
+
+.g-title {
+  font-size: 44px;
+  font-weight: bold;
+  color: #30322f;
+}
+.g-title span {
+  color: #498c55;
+  text-decoration: underline;
+}
+
+.g-subtitle {
+  font-size: 24px;
+  color: #30322f;
+}
+
+.g-button {
+  width: 20%;
+  height: 10%;
+  background-color: #498c55;
+  font-size: 24px;
+  border-radius: 25px;
+  margin-top: 5%;
+}
+
+.g-button a {
+  text-decoration: none;
+  color: #fff;
 }
 
 .g-img {
@@ -256,12 +398,120 @@
   object-fit: cover;
 }
 
-.g-asd {
+/* fim conteudo inicial do site */
+
+/* sobre */
+.g-about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 90vh;
+  background-color: #fdfdfd;
+  /* border: #464646 solid 1px; */
+  /* object-fit: cover; */
+}
+
+.g-about-content {
+  margin-top: 7%;
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  /* border: 1px solid #464646; */
+}
+
+.g-title-about {
+  width: 65%;
+  font-size: 34px;
+  font-weight: bold;
+  color: #30322f;
+  margin-bottom: 0.5%;
+}
+.g-title-about span {
+  color: #498c55;
+}
+
+
+.g-subtitle-about {
+  width: 55%;
+  font-size: 20px;
+  color: #30322f;
+  margin-bottom: 2.5%;
+}
+
+.g-container-card {
+  background-color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  /* border: 1px solid #464646; */
+  width: 75%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.g-card {
+  /* border: 1px solid #464646; */
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  min-width: 250px;
+  margin: 3% 3% 3% 0;
+}
+
+.g-text-card h1 {
+  font-size: 44px;
+  color: #333;
+  margin: 2.5% 0;
+  background-color: #498c55;
+  color: #fff;
+  padding: 1%;
+  border-radius: 50%;
+  text-align: center;
+  width: 17%;
+}
+.g-text-card h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 2%;
+}
+
+.g-text-card p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.5;
+}
+
+
+
+.g-content-2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50%;
+  text-align: center;
+  width: 60%;
   height: 100%;
+  border: #000 solid 1px;
+}
+
+.g-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.g-text {
+  font-size: 24px;
+  width: 60%;
+  height: auto;
+  padding: 5%;
+  border-radius: 25px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #fff;
+  color: #000;
 }
 
 /* Classes Kaua */
@@ -318,24 +568,24 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  border: green 10px solid;
 }
 
-  .n-container {
-    font-family: Arial, Helvetica, sans-serif;
-    background-image: url("../img/nathan/operacoes-na-Bolsa-de-Valores.png");
-    background-size: cover;
-    background-position: center;
-  }
+.n-container {
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url("../img/nathan/operacoes-na-Bolsa-de-Valores.png");
+  background-size: cover;
+  background-position: center;
+}
 
 .n-container-card {
-  border: #000 3px solid;
+  background-color: rgb(65, 65, 65);
   display: flex;
   flex-direction: row;
   /* flex-direction: column; */
   justify-content: center;
   align-items: center;
   margin-bottom: 3%;
+  padding: 10px;
 }
 
 .n-card {
@@ -348,11 +598,20 @@
   margin-left: 30px;
   border-radius: 30px;
   overflow: hidden;
-  border: red 3px solid;
-
 }
 
 .n-img-card {
-  width: 300px;
-  height: 300px;
+  border-radius: 30px;
+  width: 150px;
+  height: 150px;
+}
+
+.n-link {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+
+.n-link:hover {
+  color: #ffffff;
+  transition: 0.5s;
 }
