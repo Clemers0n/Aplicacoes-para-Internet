@@ -18,17 +18,17 @@ async function update(busca) {
 
   const pokemon = await getPokemon(busca);
   sprite.src = pokemon.sprites.front_default;
-  sprite.alt = pokemon.name
-  name.value = pokemon.name
-  type1.innerHTML = pokemon.types[0].type.name
-  type1.className = "c-"+pokemon.types[0].type.name
+  sprite.alt = pokemon.name;
+  name.value = pokemon.name;
+  type1.innerHTML = pokemon.types[0].type.name;
+  type1.className = "c-" + pokemon.types[0].type.name;
 
   if (pokemon.types.length > 1) {
-    type2.style.display = 'block';
-    type2.innerHTML = pokemon.types[1].type.name
-    type2.className = "c-"+pokemon.types[1].type.name
+    type2.style.display = "block";
+    type2.innerHTML = pokemon.types[1].type.name;
+    type2.className = "c-" + pokemon.types[1].type.name;
   } else {
-    type2.style.display = 'none';
+    type2.style.display = "none";
   }
   document.getElementById("prev").onclick = () => update(pokemon.id - 1);
   document.getElementById("next").onclick = () => update(pokemon.id + 1);
@@ -41,14 +41,15 @@ async function start() {
   pokemons.results.forEach((pokemon) => {
     const option = document.createElement("option");
     option.value = pokemon.name;
-    option.text = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
     list.appendChild(option);
   });
 }
-addEventListener("load", start);
 
-const form = document.getElementById("form");
-form.addEventListener("submit", async (event) => {
-  update(form.name.value);
-  event.preventDefault();
+document.getElementById("name").addEventListener("input", function () {
+  const input = this.value;
+  const datalist = document.getElementById("list");
+  const options = Array.from(datalist.options).map((option) => option.value);
+  if (options.includes(input)) update(input);
 });
+
+addEventListener("load", start);
