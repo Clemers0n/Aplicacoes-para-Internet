@@ -145,6 +145,11 @@
   background-color: #cdcdcd;
   border: 0px;
 }
+
+.c-pokedex-search button:hover {
+  background-color: #b4b4b4;
+  transition: 0.2s;
+}
 .c-pokedex-search input {
   text-transform: uppercase;
   text-align: center;
@@ -168,7 +173,7 @@
 .c-pokedex-types {
   display: flex;
   justify-content: space-evenly;
-  width: 50%;
+  width: 40%;
 }
 .c-pokedex-types div {
   color: white;
