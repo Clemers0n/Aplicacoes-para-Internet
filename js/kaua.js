@@ -5,17 +5,32 @@ const size = 30
 
 const snake = [{ x: 270, y: 240 }]
 
+
+const randomNumber = (min, max) => {
+    return Math.round(Math.random() * (max - min) + min)
+}
+
+const randomPosition = () => {
+    const number = randomNumber(0, canvas.width - size)
+    return Math.round(number / 30) * 30
+}
+
 const food = {
-    x: 90,
-    y: 90,
+    x: randomPosition(),
+    y: randomPosition(),
     color: "yellow"
 }
 
 let direction, loopId
 
 const drawFood = () => {
-    ctx.fillStyle = food.color
-    ctx.fillRect(food.x, food.y, size, size)
+    const { x, y, color } = food
+
+    ctx.shadowColor = color
+    ctx.shadowBlur = 6
+    ctx.fillStyle = color
+    ctx.fillRect(x, y, size, size)
+    ctx.shadowBlur = 0
 }
 
 
@@ -72,6 +87,13 @@ const drawGrid = () => {
     }
 }
 
+const chackEat = () => {
+    const head = snake[snake.length - 1]
+
+    if (head.x == food.x && head.y == food.y) {
+        snake.push(head)
+    }
+}
 
 const gameLoop = () => {
     clearInterval(loopId)
@@ -81,6 +103,7 @@ const gameLoop = () => {
     drawFood()
     moveSnake()
     drawSnake()
+    chackEat()
     
     loopId = setTimeout(() => {
         gameLoop()
