@@ -1,40 +1,29 @@
 const canvas = document.querySelector("canvas")
 const ctx = canvas.getContext("2d")
-
 const score = document.querySelector(".score--value")
 const finalScore = document.querySelector(".final-score > span")
 const menu = document.querySelector(".menu-screen")
 const buttonPlay = document.querySelector(".btn-play")
-
 const audio = new Audio('./assets/food_audio.mp3')
-
 const size = 30
-
 const initialPosition = { x: 270, y: 240 }
-
 let snake = [initialPosition]
-
 const incrementScore = () => {
     score.innerText = +score.innerText + 10
 }
-
 const randomNumber = (min, max) => {
     return Math.round(Math.random() * (max - min) + min)
 }
-
 const randomPosition = () => {
     const number = randomNumber(0, canvas.width - size)
     return Math.round(number / 30) * 30
 }
-
 const food = {
     x: randomPosition(),
     y: randomPosition(),
     color: "yellow"
 }
-
 let direction, loopId
-
 const drawFood = () => {
     const { x, y, color } = food
 
@@ -44,7 +33,6 @@ const drawFood = () => {
     ctx.fillRect(x, y, size, size)
     ctx.shadowBlur = 0
 }
-
 const drawSnake = () => {
     ctx.fillStyle = "#ddd"
     
@@ -56,7 +44,6 @@ const drawSnake = () => {
         ctx.fillRect(position.x, position.y, size, size)
     })
 }
-
 const moveSnake = () => {
     if (!direction) return
     
@@ -80,7 +67,6 @@ const moveSnake = () => {
     
     snake.shift()
 }
-
 const drawGrid = () => {
     ctx.lineWidth = 1
     ctx.strokeStyle = "#191919"
@@ -97,7 +83,6 @@ const drawGrid = () => {
         ctx.stroke()
     }
 }
-
 const checkEat = () => {
     const head = snake[snake.length - 1]
 
@@ -119,7 +104,6 @@ const checkEat = () => {
         food.color = "yellow"
     }
 }
-
 const checkCollision = () => {
     const head = snake[snake.length - 1]
     const canvasLimit = canvas.width - size
@@ -136,7 +120,6 @@ const checkCollision = () => {
         gameOver()
     }
 }
-
 const gameOver = () => {
     direction = undefined
 
@@ -144,7 +127,6 @@ const gameOver = () => {
     finalScore.innerText = score.innerText
     canvas.style.filter = "blur(2px)"
 }
-
 const gameLoop = () => {
     clearInterval(loopId)
     
@@ -160,9 +142,7 @@ const gameLoop = () => {
         gameLoop()
     },300)
 }
-
 gameLoop()
-
 document.addEventListener("keydown", ({key}) => {
     if (key == "ArrowRight" && direction !== "left") {
         direction = "right"
@@ -180,7 +160,6 @@ document.addEventListener("keydown", ({key}) => {
         direction = "up"
     }
 })
-
 buttonPlay.addEventListener("click", () =>{
     score.innerText = "00"
     menu.style.display = "none"
