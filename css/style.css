@@ -667,6 +667,11 @@
   display: block;
   margin-top: -10px;
 }
+.k-score-board {
+  display: flex;
+  justify-content: space-around;
+  width: 600px;
+}
 .menu-screen {
   position: absolute;
   display: none;
