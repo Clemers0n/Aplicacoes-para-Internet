@@ -418,7 +418,7 @@
 }
 
 .g-about-content {
-  margin-top: 7%;
+  /* margin-top: 4.5%; */
   width: 75%;
   display: flex;
   flex-direction: column;
@@ -490,13 +490,21 @@
 
 .g-product {
   display: flex;
-  flex-direction: row;
-
+  flex-direction: column;
   width: 75%;
   height: auto;
-  margin: 7% auto;
-  border: 1px solid #464646;
+  margin: auto;
+  /* border: 1px solid #464646; */
 }
+
+.g-product-title {
+  width: 100%;
+  text-align: center;
+  font-size: 24px;
+  color: #30322f;
+  margin-bottom: 2.5%;
+}
+
 .g-container-product {
   display: flex;
   flex-direction: row;
@@ -505,17 +513,28 @@
   width: 100%;
   overflow: hidden;
   flex-wrap: wrap;
-  border: 1px solid #464646;
+  /* border: 1px solid #464646; */
 }
 .g-card-product {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 225px;
-  height: 250px;
+  height: 270px;
   /* background-color: #e1e1e1; */
   /* border: 1px solid red; */
-  margin: 1.5% 0;
+  margin: 1.5% 1%;
+  border-radius: 3%;
+}
+
+.g-card-product:hover {
+  transform: scale(1.05);
+  transition: 0.5s;
+  box-shadow: 1px 1px 4px 4px rgba(0, 0, 0, 0.45);
+  -webkit-box-shadow: 1px 1px 4px 4px rgba(0, 0, 0, 0.45);
+  -moz-box-shadow: 1px 1px 4px 4px rgba(0, 0, 0, 0.45);
+
+  border-radius: 3%;
 }
 
 .g-card-product-img {
@@ -532,10 +551,12 @@
   width: 170px;
   height: 170px;
   object-fit: cover;
+
+  border-radius: 3%;
 }
 
 .g-card-product-title {
-  border: 1px solid balck;
+  /* border: 1px solid balck; */
   width: 100%;
   font-size: 20px;
   color: #333;
@@ -544,7 +565,7 @@
 }
 
 .g-product-card-preco {
-  border: 1px solid balck;
+  /* border: 1px solid balck; */
   margin: auto;
   width: 100%;
   font-size: 16px;
@@ -554,17 +575,17 @@
 }
 
 .g-product-card-tribo {
-  border: 1px solid balck;
+  /* border: 1px solid balck; */
   margin: auto;
   width: 100%;
-  font-size: 12px;
+  font-size: 14px;
   color: #333;
   text-align: left;
   margin: 2.5% 0% 0% 10%;
 }
 
 .g-product-card-estrelinhas {
-  border: 1px solid balck;
+  /* border: 1px solid balck; */
   margin: auto;
   width: 100%;
   font-size: 14px;
@@ -572,6 +593,45 @@
   text-align: left;
   margin: 0% 0% 0% 9%;
 }
+
+/* fim produto  */
+
+/* contato */
+
+.g-contact {
+  margin-top: 7%;
+}
+
+.g-contact-container {
+  display: flex;
+  flex-direction: column;
+}
+.g-form {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: auto;
+}
+
+.g-contact-text {
+  width: 80%;
+  margin: auto;
+}
+
+.g-map-container {
+  width: 100%;
+  height: 500px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.g-map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 .g-content-2 {
   display: flex;
   justify-content: center;
