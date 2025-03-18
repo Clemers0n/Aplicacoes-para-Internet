@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=play_arrow" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=play_arrow" />
     <link rel="stylesheet" href="./css/style.css">
     <title>Snake Game</title>
 </head>
+
 <body class="Snake-body">
     <header>
         <nav class="k-nav">
             <ul>
-              <li><a href="./kaua-page.html">Voltar</a></li>
-          </nav>
+                <li><a href="./kaua-page.html">Voltar</a></li>
+        </nav>
     </header>
-    <div class="score">score: <span class="score--value">00</span></div>
+    <div class="k-score-board">
+        <div class="score">score: <span class="score--value">00</span></div>
+        <div class="score">high: <span id="high-score" class="score--value"></span></div>
+    </div>
     <div class="menu-screen">
         <span class="game-over">game over</span>
         <span class="final-score">score <span>00</span></span>
@@ -28,4 +34,5 @@
     <canvas class="sg-canvas" width="600" height="600"></canvas>
     <script src="./js/snake.js"></script>
 </body>
+
 </html>
