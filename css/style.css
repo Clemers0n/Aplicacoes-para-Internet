@@ -727,6 +727,11 @@
   display: block;
   margin-top: -10px;
 }
+.k-score-board {
+  display: flex;
+  justify-content: space-around;
+  width: 600px;
+}
 .menu-screen {
   position: absolute;
   display: none;
@@ -760,48 +765,72 @@
 
 /* Classes Nathan */
 
+
 .n-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-.n-container {
   font-family: Arial, Helvetica, sans-serif;
   background-image: url("../img/nathan/operacoes-na-Bolsa-de-Valores.png");
   background-size: cover;
   background-position: center;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  object-fit: cover;
 }
 
 .n-container-card {
-  background-color: rgb(156, 156, 156);
+  /* background-color: rgb(255, 255, 255); */
   display: flex;
   flex-direction: row;
   /* flex-direction: column; */
   justify-content: center;
   align-items: center;
   margin-bottom: 3%;
+  margin-top: 0%;
   padding: 10px;
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  /* border: 1px solid red; */
+}
+
+.n-container h1,h3 {
+  margin-top: 1.5%;
 }
 
 .n-card {
+  width: 160px;
+  height: 150px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin-right: 30px;
-  margin-left: 30px;
-  border-radius: 30px;
+  margin-right: 25px;
+  margin-left: 25px;
+  border-radius: 20px;
   overflow: hidden;
+  margin-top: 25px;
+  text-align: center;
+  /* width: 75%; */
+  height: 200px;
+  padding: 2px;
+  /* border: 1px solid violet; */
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.n-card img {
+  margin-top: 7px;
 }
 
 .n-img-card {
-  border-radius: 30px;
-  width: 150px;
-  height: 150px;
+ 
+  border-radius: 20px;
+  width: 140px;
+  height: 140px;
+  margin: auto;
 }
 
 .n-link {
@@ -812,4 +841,14 @@
 .n-link:hover {
   color: #ffffff;
   transition: 0.5s;
+}
+
+.n-text-card h2{
+margin-top: 10px;
+/* color: #fff; */
+}
+
+.n-text-card h2{
+margin-top: 10px;
+/* color: #fff; */
 }

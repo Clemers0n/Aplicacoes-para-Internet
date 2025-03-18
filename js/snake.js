@@ -10,6 +10,11 @@ const initialPosition = { x: 270, y: 240 }
 let snake = [initialPosition]
 const incrementScore = () => {
     score.innerText = +score.innerText + 10
+    if (Number(score.innerText) > Number(localStorage.getItem('h-score'))) {
+        localStorage.setItem('h-score', score.innerText)
+        const hScore = document.getElementById('high-score')
+        hScore.innerText = score.innerText
+    }
 }
 const randomNumber = (min, max) => {
     return Math.round(Math.random() * (max - min) + min)
@@ -34,7 +39,7 @@ const drawFood = () => {
 }
 const drawSnake = () => {
     ctx.fillStyle = "#ddd"
-    snake.forEach((position, index) =>{
+    snake.forEach((position, index) => {
         if (index == snake.length - 1) {
             ctx.fillStyle = "white"
         }
@@ -42,19 +47,19 @@ const drawSnake = () => {
     })
 }
 const moveSnake = () => {
-    if (!direction) return 
+    if (!direction) return
     const head = snake[snake.length - 1]
     if (direction == "right") {
         snake.push({ x: head.x + size, y: head.y })
     }
     if (direction == "left") {
-        snake.push({ x: head.x - size, y: head.y})
+        snake.push({ x: head.x - size, y: head.y })
     }
     if (direction == "down") {
-        snake.push({ x: head.x, y: head.y + size})
+        snake.push({ x: head.x, y: head.y + size })
     }
     if (direction == "up") {
-        snake.push({ x: head.x, y: head.y - size})
+        snake.push({ x: head.x, y: head.y - size })
     }
     snake.shift()
 }
@@ -81,7 +86,7 @@ const checkEat = () => {
 
         let x = randomPosition()
         let y = randomPosition()
-        
+
         while (snake.find((position) => position.x == x && position.y == y)) {
             x = randomPosition()
             y = randomPosition()
@@ -96,7 +101,7 @@ const checkCollision = () => {
     const head = snake[snake.length - 1]
     const canvasLimit = canvas.width - size
     const neckIndex = snake.length - 2
-    const wallCollision = 
+    const wallCollision =
         head.x < 0 || head.x > canvasLimit || head.y < 0 || head.y > canvasLimit
     const selfCollision = snake.find((position, index) => {
         return index < neckIndex && position.x == head.x && position.y == head.y
@@ -122,10 +127,10 @@ const gameLoop = () => {
     checkCollision()
     loopId = setTimeout(() => {
         gameLoop()
-    },200)
+    }, 150)
 }
 gameLoop()
-document.addEventListener("keydown", ({key}) => {
+document.addEventListener("keydown", ({ key }) => {
     if (key == "ArrowRight" && direction !== "left") {
         direction = "right"
     }
@@ -139,9 +144,17 @@ document.addEventListener("keydown", ({key}) => {
         direction = "up"
     }
 })
-buttonPlay.addEventListener("click", () =>{
+buttonPlay.addEventListener("click", () => {
     score.innerText = "00"
     menu.style.display = "none"
     canvas.style.filter = "none"
     snake = [initialPosition]
+})
+addEventListener('load', () => {
+    if(localStorage.getItem('h-score')) {
+        document.getElementById('high-score').innerHTML = localStorage.getItem('h-score')
+    } else {
+        console.log(localStorage.getItem('h-score'))
+        document.getElementById('high-score').innerHTML = localStorage.getItem('h-score')
+    }
 })
