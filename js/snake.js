@@ -127,7 +127,7 @@ const gameLoop = () => {
     checkCollision()
     loopId = setTimeout(() => {
         gameLoop()
-    }, 200)
+    }, 150)
 }
 gameLoop()
 document.addEventListener("keydown", ({ key }) => {
