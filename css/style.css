@@ -132,7 +132,6 @@
   width: 100%;
 }
 .c-pokemon-search input {
-  height: 1.5rem;
   font-size: 1.4rem;
   outline: none;
 }
@@ -197,7 +196,6 @@
 .c-pokemon-img {
   background-color: white;
   width: 100%;
-  height: 100%;
 }
 .c-btn-foda {
   position: absolute;

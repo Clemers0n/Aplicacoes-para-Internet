@@ -14,6 +14,14 @@ async function getAllPokemons() {
   );
 }
 
+function shiny(url, button) {
+  const formatBtn = button.split("/");
+  if (formatBtn[formatBtn.length - 1] == "star.png") {
+    return url.front_default;
+  } else {
+    return url.front_shiny;
+  }
+}
 async function update(busca) {
   // Reset das config
   sessionStorage.clear();
@@ -28,9 +36,15 @@ async function update(busca) {
 
   const specie = JSON.parse(sessionStorage.getItem("specie"));
 
+  shiny(
+    pokemon.sprites.other["official-artwork"],
+    document.getElementById("sprite-btn").src
+  );
   document.getElementById("name").innerHTML = pokemon.name;
-  document.getElementById("sprite").src =
-    pokemon.sprites.other["official-artwork"].front_default;
+  document.getElementById("sprite").src = shiny(
+    pokemon.sprites.other["official-artwork"],
+    document.getElementById("sprite-btn").src
+  );
   document.getElementById("sprite").alt = pokemon.name;
   document.getElementById("height").innerHTML = `${pokemon.height / 10} m`;
   document.getElementById("weight").innerHTML = `${pokemon.weight / 10} kg`;
@@ -120,7 +134,7 @@ async function update(busca) {
       rank = 4;
     } else if (element.base_stat <= 150) {
       rank = 5;
-    } else if (element.base_stat <= 200) {
+    } else {
       rank = 6;
     }
     let th = document.getElementById(`${element.stat.name}-stat`).cells[0]
@@ -266,10 +280,8 @@ addEventListener("load", start());
 
 document.getElementById("sprite-btn").addEventListener("click", () => {
   const pokemon = JSON.parse(sessionStorage.getItem("pokemon"));
-  if (
-    document.getElementById("sprite").src ==
-    pokemon.sprites.other["official-artwork"].front_default
-  ) {
+  const formatBtn = document.getElementById("sprite-btn").src.split("/");
+  if (formatBtn[formatBtn.length - 1] == "star.png") {
     document.getElementById("sprite").src =
       pokemon.sprites.other["official-artwork"].front_shiny;
     document.getElementById("sprite-btn").src =
