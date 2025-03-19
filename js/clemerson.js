@@ -29,7 +29,8 @@ async function update(busca) {
   const specie = JSON.parse(sessionStorage.getItem("specie"));
 
   document.getElementById("name").innerHTML = pokemon.name;
-  document.getElementById("sprite").src = pokemon.sprites.other["official-artwork"].front_default
+  document.getElementById("sprite").src =
+    pokemon.sprites.other["official-artwork"].front_default;
   document.getElementById("sprite").alt = pokemon.name;
   document.getElementById("height").innerHTML = `${pokemon.height / 10} m`;
   document.getElementById("weight").innerHTML = `${pokemon.weight / 10} kg`;
@@ -151,22 +152,13 @@ async function update(busca) {
     fairy: "FAI",
   };
 
+  // prettier-ignore
   const weaknesses = {
     NOR: { FIG: 2, GHO: 0 },
     FIR: { WAT: 2, GRA: 0.5, ICE: 0.5, FIR: 0.5, BUG: 0.5, ROC: 2 },
     WAT: { ELE: 2, GRA: 2, FIR: 0.5, ICE: 0.5, STE: 0.5 },
     ELE: { GRO: 2, ELE: 0.5, FLY: 0.5, STE: 0.5 },
-    GRA: {
-      FIR: 2,
-      ICE: 2,
-      POI: 2,
-      FLY: 2,
-      BUG: 2,
-      WAT: 0.5,
-      ELE: 0.5,
-      GRA: 0.5,
-      GRO: 0.5,
-    },
+    GRA: { FIR: 2, ICE: 2, POI: 2, FLY: 2, BUG: 2, WAT: 0.5, ELE: 0.5, GRA: 0.5, GRO: 0.5},
     ICE: { FIR: 2, FIG: 2, ROC: 2, STE: 2, ICE: 0.5 },
     FIG: { FLY: 2, PSY: 2, BUG: 0.5, ROC: 0.5, DAR: 0.5, FAI: 2 },
     POI: { GRO: 2, PSY: 2, BUG: 0.5, GRA: 0.5, POI: 0.5, FAI: 0.5 },
@@ -174,101 +166,82 @@ async function update(busca) {
     FLY: { ELE: 2, ICE: 2, ROC: 2, GRO: 0, BUG: 0.5, FIG: 0.5, GRA: 0.5 },
     PSY: { BUG: 2, GHO: 2, DAR: 2, FIG: 0.5, PSY: 0.5 },
     BUG: { FIR: 2, FLY: 2, ROC: 2, FIG: 0.5, GRA: 0.5 },
-    ROC: {
-      WAT: 2,
-      GRA: 2,
-      FIG: 2,
-      GRO: 2,
-      STE: 2,
-      NOR: 0.5,
-      FIR: 0.5,
-      POI: 0.5,
-      FLY: 0.5,
-    },
+    ROC: { WAT: 2, GRA: 2, FIG: 2, GRO: 2, STE: 2, NOR: 0.5, FIR: 0.5, POI: 0.5, FLY: 0.5},
     GHO: { GHO: 2, DAR: 2, NOR: 0, FIG: 0 },
     DRA: { ICE: 2, DRA: 2, FAI: 2, FIR: 0.5, WAT: 0.5, ELE: 0.5, GRA: 0.5 },
     DAR: { FIG: 2, BUG: 2, FAI: 2, GHO: 0.5, DAR: 0.5, PSY: 0 },
-    STE: {
-      FIR: 2,
-      FIG: 2,
-      GRO: 2,
-      NOR: 0.5,
-      GRA: 0.5,
-      ICE: 0.5,
-      FLY: 0.5,
-      PSY: 0.5,
-      BUG: 0.5,
-      ROC: 0.5,
-      DRA: 0.5,
-      STE: 0.5,
-      FAI: 0.5,
-      POI: 0,
-    },
+    STE: { FIR: 2, FIG: 2, GRO: 2, NOR: 0.5, GRA: 0.5, ICE: 0.5, FLY: 0.5, PSY: 0.5, BUG: 0.5, ROC: 0.5, DRA: 0.5, STE: 0.5, FAI: 0.5, POI: 0},
     FAI: { STE: 2, POI: 2, FIG: 0.5, BUG: 0.5, DAR: 0.5, DRA: 0 },
   };
 
   // Função para converter números decimais em frações
-function decimalToFraction(value) {
-  if (value === 1) return "1";
-  if (value === 0.5) return "1/2";
-  if (value === 0.25) return "1/4";
-  if (value === 2) return "2";
-  return value; // Caso não seja um valor que queremos transformar em fração
-}
-
-function getPokemonWeaknesses(types) {
-  const convertedTypes = types.map((type) => typeMap[type] || type);
-  const result = {};
-
-  Object.keys(weaknesses).forEach((defType) => {
-    let multiplier = 1;
-    convertedTypes.forEach((pokemonType) => {
-      if (
-        weaknesses[pokemonType] &&
-        weaknesses[pokemonType][defType] !== undefined
-      ) {
-        multiplier *= weaknesses[pokemonType][defType];
-      }
-    });
-    result[defType] = multiplier;
-  });
-  return result;
-}
-
-function fillTableWithWeaknesses(tableId, types) {
-  const table = document.getElementById(tableId);
-  const weaknessesData = getPokemonWeaknesses(types);
-  const headers = Array.from(table.rows[0].cells).map(
-    (th) => typeMap[th.textContent] || th.textContent
-  );
-
-  let secondRow = table.rows[1];
-  if (!secondRow) {
-    secondRow = table.insertRow();
-  } else {
-    secondRow.innerHTML = "";
+  function decimalToFraction(value) {
+    if (value === 1) return "1";
+    if (value === 0.5) return "1/2";
+    if (value === 0.25) return "1/4";
+    if (value === 2) return "2";
+    return value; // Caso não seja um valor que queremos transformar em fração
   }
 
-  headers.forEach((defType) => {
-    const cell = document.createElement("td");
-    const value = weaknessesData[defType];
-    cell.textContent = value !== undefined ? decimalToFraction(value) : "-";
-    if(value < 1 && value > 0) {
-      cell.className = "c-pokemon-defenses-notefct" 
-    } else if(value == 0) {
-      cell.className = "c-pokemon-defenses-imefct"
-    } else if (value > 1) {
-      cell.className = "c-pokemon-defenses-suefct"
-    } else {
-      cell.className = "c-pokemon-defenses-norfct"
-    }
-    secondRow.appendChild(cell);
-  });
-}
+  function getPokemonWeaknesses(types) {
+    const convertedTypes = types.map((type) => typeMap[type] || type);
+    const result = {};
 
-// Exemplo de uso para preencher a tabela com um Pokémon do tipo Fire/Flying
-fillTableWithWeaknesses("table-type-1", [pokemon.types[0].type.name, pokemon.types[1]?.type.name]);
-fillTableWithWeaknesses("table-type-2", [pokemon.types[0].type.name, pokemon.types[1]?.type.name]);
+    Object.keys(weaknesses).forEach((defType) => {
+      let multiplier = 1;
+      convertedTypes.forEach((pokemonType) => {
+        if (
+          weaknesses[pokemonType] &&
+          weaknesses[pokemonType][defType] !== undefined
+        ) {
+          multiplier *= weaknesses[pokemonType][defType];
+        }
+      });
+      result[defType] = multiplier;
+    });
+    return result;
+  }
+
+  function fillTableWithWeaknesses(tableId, types) {
+    const table = document.getElementById(tableId);
+    const weaknessesData = getPokemonWeaknesses(types);
+    const headers = Array.from(table.rows[0].cells).map(
+      (th) => typeMap[th.textContent] || th.textContent
+    );
+
+    let secondRow = table.rows[1];
+    if (!secondRow) {
+      secondRow = table.insertRow();
+    } else {
+      secondRow.innerHTML = "";
+    }
+
+    headers.forEach((defType) => {
+      const cell = document.createElement("td");
+      const value = weaknessesData[defType];
+      cell.textContent = value !== undefined ? decimalToFraction(value) : "-";
+      if (value < 1 && value > 0) {
+        cell.className = "c-pokemon-defenses-notefct";
+      } else if (value == 0) {
+        cell.className = "c-pokemon-defenses-imefct";
+      } else if (value > 1) {
+        cell.className = "c-pokemon-defenses-suefct";
+      } else {
+        cell.className = "c-pokemon-defenses-norfct";
+      }
+      secondRow.appendChild(cell);
+    });
+  }
+
+  // Exemplo de uso para preencher a tabela com um Pokémon do tipo Fire/Flying
+  fillTableWithWeaknesses("table-type-1", [
+    pokemon.types[0].type.name,
+    pokemon.types[1]?.type.name,
+  ]);
+  fillTableWithWeaknesses("table-type-2", [
+    pokemon.types[0].type.name,
+    pokemon.types[1]?.type.name,
+  ]);
 }
 
 async function start() {
@@ -293,13 +266,17 @@ addEventListener("load", start());
 
 document.getElementById("sprite-btn").addEventListener("click", () => {
   const pokemon = JSON.parse(sessionStorage.getItem("pokemon"));
-  if(document.getElementById("sprite").src == pokemon.sprites.other["official-artwork"].front_default){
-    document.getElementById("sprite").src = pokemon.sprites.other["official-artwork"].front_shiny;
-    document.getElementById("sprite-btn").src = './img/shiny-star.png'
-
+  if (
+    document.getElementById("sprite").src ==
+    pokemon.sprites.other["official-artwork"].front_default
+  ) {
+    document.getElementById("sprite").src =
+      pokemon.sprites.other["official-artwork"].front_shiny;
+    document.getElementById("sprite-btn").src =
+      "./img/clemerson/shiny-star.png";
   } else {
-    document.getElementById("sprite").src = pokemon.sprites.other["official-artwork"].front_default;
-    document.getElementById("sprite-btn").src = './img/star.png'
-
+    document.getElementById("sprite").src =
+      pokemon.sprites.other["official-artwork"].front_default;
+    document.getElementById("sprite-btn").src = "./img/clemerson/star.png";
   }
 });
