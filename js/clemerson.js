@@ -64,14 +64,14 @@ async function update(busca) {
 
   document.getElementById(
     "type1"
-  ).src = `../img/clemerson/types/${pokemon.types[0].type.name}.png`;
+  ).src = `./img/clemerson/types/${pokemon.types[0].type.name}.png`;
   document.getElementById("type1").alt = pokemon.types[0].type.name;
 
   if (pokemon.types[1]?.type) {
     document.getElementById("type2").style.display = "block";
     document.getElementById(
       "type2"
-    ).src = `../img/clemerson/types/${pokemon.types[1].type.name}.png`;
+    ).src = `./img/clemerson/types/${pokemon.types[1].type.name}.png`;
     document.getElementById("type2").alt = pokemon.types[1].type.name;
   } else {
     document.getElementById("type2").style.display = "none";
