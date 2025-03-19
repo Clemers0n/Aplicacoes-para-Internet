@@ -7,43 +7,171 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body class="c-body">
+    <header class="c-header">
+      <nav class="c-nav">
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li class="c-active">
+            <a href="./clemerson-page.html">Clemerson</a>
+          </li>
+          <li><a href="./gustavo-page.html">Gustavo</a></li>
+          <li><a href="./kaua-page.html">Kauã</a></li>
+          <li><a href="./nathan-page.html">Nathan</a></li>
+        </ul>
+      </nav>
+    </header>
     <div class="c-container">
-      <header class="c-header">
-        <nav class="c-nav">
-          <ul>
-            <li><a href="./index.html">Home</a></li>
-            <li class="c-active">
-              <a href="./clemerson-page.html">Clemerson</a>
-            </li>
-            <li><a href="./gustavo-page.html">Gustavo</a></li>
-            <li><a href="./kaua-page.html">Kauã</a></li>
-            <li><a href="./nathan-page.html">Nathan</a></li>
-          </ul>
-        </nav>
-      </header>
-      <section class="c-section">
-        <div class="c-pokedex">
-          <div class="c-pokedex-search">
-            <button id="prev">&#10094;</button>
-            <input
-              id="name"
-              list="list"
-              type="text"
-              placeholder="Digite o nome do pokemon"
-              autocomplete="off"
-            />
-            <datalist id="list"> </datalist>
-            <button id="next">&#10095;</button>
+      <section class="c-pokemon-search">
+        <input type="text" name="" id="pokemons" list="list" />
+        <datalist id="list"></datalist>
+        <div class="c-pokemon-btn">
+          <button id="prev">Prev</button>
+          <button id="next">Next</button>
+        </div>
+      </section>
+      <section class="c-pokemon-info">
+        <h1 id="name" class="c-pokemon-name"></h1>
+        <div class="c-pokemon-data-principal">
+          <div class="c-pokemon-data-img">
+            <img id="sprite" class="c-pokemon-img" src="" alt="" />
+            <img id="sprite-btn" class="c-btn-foda" src="./img/clemerson/star.png" />
           </div>
-          <img id="sprite"/>
-          <div class="c-pokedex-types">
-            <div id="type1"></div>
-            <div id="type2"></div>
+          <div class="c-pokemon-data-pokedex">
+            <h2>Pokedex Data</h2>
+            <table>
+              <tr>
+                <th>National Nº</th>
+                <td id="pokedex-n"></td>
+              </tr>
+              <tr>
+                <th>Type</th>
+                <td class="c-pokemon-types">
+                  <img id="type1" />
+                  <img id="type2" />
+                </td>
+              </tr>
+              <tr>
+                <th>Species</th>
+                <td id="species"></td>
+              </tr>
+              <tr>
+                <th>Height</th>
+                <td id="height"></td>
+              </tr>
+              <tr>
+                <th>Weight</th>
+                <td id="weight"></td>
+              </tr>
+              <tr>
+                <th>Abilities</th>
+                <td id="abilities"></td>
+              </tr>
+            </table>
+          </div>
+          <div class="c-pokemon-data-training">
+            <h2>Training</h2>
+            <table>
+              <tr>
+                <th>EV yield</th>
+                <td id="ev"></td>
+              </tr>
+              <tr>
+                <th>Catch rate</th>
+                <td id="catch-rate"></td>
+              </tr>
+              <tr>
+                <th>Base Friendship</th>
+                <td id="base-friendship"></td>
+              </tr>
+              <tr>
+                <th>Base Exp.</th>
+                <td id="base-exp"></td>
+              </tr>
+              <tr>
+                <th>Growth Rate</th>
+                <td id="growth-rate"></td>
+              </tr>
+            </table>
+          </div>
+          <div class="c-pokemon-data-breeding">
+            <h2>Breeding</h2>
+            <table>
+              <tr>
+                <th>Egg Groups</th>
+                <td id="egg-groups"></td>
+              </tr>
+              <tr>
+                <th>Gender</th>
+                <td id="gender"></td>
+              </tr>
+              <tr>
+                <th>Egg Cyles</th>
+                <td id="egg-cyles"></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="c-pokemon-data-secundaria">
+          <div class="c-pokemon-status">
+            <h2>Base Status</h2>
+            <table>
+              <tr id="hp-stat">
+                <th>HP</th>
+              </tr>
+              <tr id="attack-stat">
+                <th>Attack</th>
+              </tr>
+              <tr id="defense-stat">
+                <th>Defense</th>
+              </tr>
+              <tr id="special-attack-stat">
+                <th>Sp. Attack</th>
+              </tr>
+              <tr id="special-defense-stat">
+                <th>Sp. Defense</th>
+              </tr>
+              <tr id="speed-stat">
+                <th>Speed</th>
+              </tr>
+            </table>
+          </div>
+          <div class="c-pokemon-defenses">
+            <h2>Type defenses</h2>
+            <div>
+              <table id="table-type-1">
+                <tr>
+                  <th class="c-normal">NOR</th>
+                  <th class="c-fire">FIR</th>
+                  <th class="c-water">WAT</th>
+                  <th class="c-electric">ELE</th>
+                  <th class="c-grass">GRA</th>
+                  <th class="c-ice">ICE</th>
+                  <th class="c-fighting">FIG</th>
+                  <th class="c-poison">POI</th>
+                  <th class="c-ground">GRO</th>
+                </tr>
+                <tr></tr>
+              </table>
+              <table id="table-type-2">
+                <tr>
+                  <th class="c-flying">FLY</th>
+                  <th class="c-psychic">PSY</th>
+                  <th class="c-bug">BUG</th>
+                  <th class="c-rock">ROC</th>
+                  <th class="c-ghost">GHO</th>
+                  <th class="c-dragon">DRA</th>
+                  <th class="c-dark">DAR</th>
+                  <th class="c-steel">STE</th>
+                  <th class="c-fairy">FAI</th>
+                </tr>
+                <tr></tr>
+              </table>
+            </div>
           </div>
         </div>
       </section>
-      <footer class="c-footer"><p>Clemerson dos Santos &copy 2025</p></footer>
     </div>
+    <footer class="c-footer"><p>Clemerson dos Santos &copy 2025</p></footer>
     <!-- JavaScript -->
     <script src="./js/clemerson.js"></script>
   </body>

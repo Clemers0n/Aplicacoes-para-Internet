@@ -76,17 +76,14 @@
 /* Classes Clemerson */
 .c-body {
   font-family: Arial, Helvetica, sans-serif;
-  background-image: url("../img/clemerson/background.png");
-  background-size: cover;
-  background-position: center;
-}
-.c-container {
-  flex-direction: column;
-  height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  background-image: url("../img/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
+/* Header */
 .c-header {
   top: 0;
   left: 0;
@@ -115,75 +112,239 @@
   text-decoration: none;
   font-size: 16px;
 }
-.c-section {
-  display: flex;
-  place-items: center;
-  width: 100%;
-  height: 100%;
-  justify-content: center;
-  max-width: 700px;
-}
-.c-pokedex {
+/* Conteudo principal */
+.c-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: red;
-  border-radius: 10px;
-  height: 75%;
-  width: 75%;
+  background-color: #404040;
+  width: 100%;
+  padding: 20px;
+  max-width: 1280px;
 }
-.c-pokedex-search {
+/* Parte de Procura dos Pokemons */
+.c-pokemon-search {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.c-pokemon-buscador {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
 }
-.c-pokedex-search button {
-  width: 35px;
-  height: 35px;
-  background-color: #cdcdcd;
-  border: 0px;
+.c-pokemon-btn {
+  display: flex;
+  justify-content: space-between;
+  height: 30px;
+  width: 100%;
+}
+.c-pokemon-btn button {
+  width: 25%;
+}
+/* Parte de Info dos Pokemons */
+.c-pokemon-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  color: white;
+}
+.c-pokemon-name {
+  text-transform: capitalize;
 }
 
-.c-pokedex-search button:hover {
-  background-color: #b4b4b4;
-  transition: 0.2s;
+/* Grid Principal */
+.c-pokemon-data-principal {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 5px;
+  width: 100%;
 }
-.c-pokedex-search input {
-  text-transform: uppercase;
-  text-align: center;
-  width: 50%;
-  height: 35px;
-  border: 0px;
-  background-color: white;
+.c-pokemon-data-principal table {
+  width: 100%;
 }
-.c-pokedex-search input:focus {
-  outline: none;
-  border: 2px solid transparent;
-}
-.c-pokedex img {
-  image-rendering: pixelated;
-  padding: 10px;
-  width: 300px;
-  background-color: white;
-  border-radius: 10px;
-  margin: 10px;
-}
-.c-pokedex-types {
+.c-pokemon-data-principal tr {
   display: flex;
-  justify-content: space-evenly;
-  width: 40%;
+  flex-direction: row;
+  border-bottom: #000 1px solid;
+  padding: 5px 0px;
 }
-.c-pokedex-types div {
-  color: white;
-  padding: 4px 0px;
-  border-radius: 4px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+.c-pokemon-data-principal th {
+  margin-right: 10px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+.c-pokemon-data-principal td {
+  margin-left: 10px;
+}
+.c-pokemon-data-img {
+  position: relative;
+  grid-row: span 4 / span 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.c-pokemon-img {
+  background-color: white;
+  width: 100%;
+  height: 100%;
+}
+.c-btn-foda {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(0, 0, 0, 0.336);
+  border-radius: 50%;
+  padding: 5px;
+}
+.c-pokemon-data-pokedex {
+  grid-row: span 4 / span 4;
+}
+.c-pokemon-data-pokedex th {
+  width: 100px;
+}
+.c-pokemon-data-training {
+  grid-row: span 2 / span 2;
+}
+.c-pokemon-data-training th {
+  width: 135px;
+}
+.c-pokemon-data-breeding {
+  grid-row: span 2 / span 2;
+  grid-column-start: 3;
+  grid-row-start: 3;
+}
+.c-pokemon-data-breeding th {
+  width: 100px;
+}
+
+/* Grid Secundaria */
+.c-pokemon-data-secundaria {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  gap: 9px;
+  width: 100%;
+}
+.c-pokemon-status {
+  width: 100%;
+  grid-column: span 2 / span 2;
+}
+.c-pokemon-defenses {
+  grid-column-start: 3;
+}
+
+/* Estilização dos tipos genero */
+.c-gender-male {
+  color: #39f;
+}
+.c-gender-female {
+  color: #a59;
+}
+.c-pokemon-types {
+  display: flex;
+  flex-direction: row;
+}
+.c-pokemon-types img {
+  width: 125px;
+  margin-right: 10px;
+}
+
+.c-pokemon-status table {
+  display: block;
+  text-align: right;
+  white-space: nowrap;
+}
+.c-pokemon-status tbody {
+  display: block;
+  width: 100%;
+}
+.c-pokemon-status tr {
+  display: flex;
+  border-bottom: #000 1px solid;
+  padding: 5px;
+}
+.c-pokemon-status th {
+  display: block;
+  width: 130px;
+  margin-right: 5px;
+}
+.c-stat-txt {
+  width: 35px;
+  margin-right: 5px;
+}
+.c-stat-cell-bar {
+  width: 100%;
+}
+.c-bar-stat {
+  height: 16px;
+  border-radius: 3px;
+  border: #00000091 2px solid;
+}
+.c-rank-1 {
+  background-color: #f34444;
+}
+.c-rank-2 {
+  background-color: #ff7f0f;
+}
+.c-rank-3 {
+  background-color: #ffdd57;
+}
+.c-rank-4 {
+  background-color: #a0e515;
+}
+.c-rank-5 {
+  background-color: #23cd5e;
+}
+.c-rank-6 {
+  background-color: #00c2b8;
+  max-width: 100%;
+}
+
+/* Defesas */
+.c-pokemon-defenses tbody {
+  display: block;
+  width: 100%;
   text-align: center;
-  width: 80px;
-  text-transform: uppercase;
 }
+.c-pokemon-defenses tr {
+  width: 100%;
+}
+.c-pokemon-defenses th{
+  width: 40px;
+  height: 40px;
+  border: 1px rgba(0, 0, 0, 0.363) solid;
+}
+.c-pokemon-defenses td{
+  width: 40px;
+  height: 40px;
+}
+
+.c-pokemon-defenses-suefct {
+  background-color: #23cd5e;
+}
+.c-pokemon-defenses-notefct {
+  background-color: #f34444;
+}
+.c-pokemon-defenses-imefct {
+  background-color: #a59;
+}
+.c-pokemon-defenses-norfct {
+  background-color: #ffffff49;
+}
+
 .c-normal {
   background-color: #aa9;
 }
@@ -238,6 +399,7 @@
 .c-fairy {
   background-color: #e9e;
 }
+/* Footer */
 .c-footer {
   background-color: #6e6e6e;
   color: white;
@@ -245,7 +407,6 @@
   width: 100%;
   padding: 5px 0px;
 }
-
 /* Classes Gustavo */
 
 .g-body {
