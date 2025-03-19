@@ -203,12 +203,12 @@
   left: 5px;
   height: 40px;
   width: 40px;
-  background-color: rgba(0, 0, 0, 0.300);
+  background-color: rgba(0, 0, 0, 0.3);
   border-radius: 50%;
   padding: 5px;
 }
 .c-btn-foda:hover {
-  background-color: rgba(0, 0, 0, 0.400);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 .c-pokemon-data-pokedex {
   grid-row: span 4 / span 4;
@@ -230,7 +230,47 @@
 .c-pokemon-data-breeding th {
   width: 100px;
 }
+.c-info {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-left: 5px;
+}
+.c-info-img { 
+  width: 15px;
+}
+.c-info:hover .c-tooltip {
+  visibility: visible;
+  opacity: 1;
+}
 
+.c-tooltip {
+  visibility: hidden;
+  width: 200px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 8px;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.c-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+}
 /* Grid Secundaria */
 .c-pokemon-data-secundaria {
   display: grid;
@@ -323,12 +363,12 @@
 .c-pokemon-defenses tr {
   width: 100%;
 }
-.c-pokemon-defenses th{
+.c-pokemon-defenses th {
   width: 40px;
   height: 40px;
   border: 1px rgba(0, 0, 0, 0.363) solid;
 }
-.c-pokemon-defenses td{
+.c-pokemon-defenses td {
   width: 40px;
   height: 40px;
 }
@@ -927,7 +967,6 @@
 
 /* Classes Nathan */
 
-
 .n-container {
   display: flex;
   flex-direction: column;
@@ -958,7 +997,8 @@
   /* border: 1px solid red; */
 }
 
-.n-container h1,h3 {
+.n-container h1,
+h3 {
   margin-top: 1.5%;
 }
 
@@ -988,7 +1028,6 @@
 }
 
 .n-img-card {
- 
   border-radius: 20px;
   width: 140px;
   height: 140px;
@@ -1005,12 +1044,12 @@
   transition: 0.5s;
 }
 
-.n-text-card h2{
-margin-top: 10px;
-/* color: #fff; */
+.n-text-card h2 {
+  margin-top: 10px;
+  /* color: #fff; */
 }
 
-.n-text-card h2{
-margin-top: 10px;
-/* color: #fff; */
+.n-text-card h2 {
+  margin-top: 10px;
+  /* color: #fff; */
 }

@@ -8,12 +8,35 @@ async function getSpecie(pokemon) {
     (response) => response.json()
   );
 }
+
 async function getAllPokemons() {
   return fetch(`https://pokeapi.co/api/v2/pokemon?limit=3000`).then(
     (response) => response.json()
   );
 }
+async function getAbilities(pokemon) {
+  let abilitiesText = "";
 
+  for (const element of pokemon.abilities) {
+    try {
+      // Aguarda a resposta da API e converte para JSON
+      const response = await fetch(element.ability.url);
+      const abilityData = await response.json();
+      const englishEffect = abilityData.effect_entries.find(entry => entry.language.name === "en");
+      const img = `<img src="./img/clemerson/info.png" class="c-info-img"/>`
+      // Formata o texto corretamente
+      if (element.is_hidden) {
+        abilitiesText += `<small>${formatTxt(element.ability.name)} (hidden ability)<span class="c-info">${img}<span class="c-tooltip">${englishEffect.effect}</span></span></span><br></small>`;
+      } else {
+        abilitiesText += `<span>${element.slot}. ${formatTxt(element.ability.name)}<span class="c-info">${img}<span class="c-tooltip">${englishEffect.effect}</span></span></span><br>`;
+      }
+    } catch (error) {
+      console.error("Erro ao buscar habilidade:", error);
+    }
+  }
+
+  return document.getElementById("abilities").innerHTML = abilitiesText;
+}
 function shiny(url, button) {
   const formatBtn = button.split("/");
   if (formatBtn[formatBtn.length - 1] == "star.png") {
@@ -21,6 +44,10 @@ function shiny(url, button) {
   } else {
     return url.front_shiny;
   }
+}
+
+function formatTxt(texto) {
+  return texto.split('-').join(" ")
 }
 async function update(busca) {
   // Reset das config
@@ -36,11 +63,7 @@ async function update(busca) {
 
   const specie = JSON.parse(sessionStorage.getItem("specie"));
 
-  shiny(
-    pokemon.sprites.other["official-artwork"],
-    document.getElementById("sprite-btn").src
-  );
-  document.getElementById("name").innerHTML = pokemon.name;
+  document.getElementById("name").innerHTML = formatTxt(pokemon.name);
   document.getElementById("sprite").src = shiny(
     pokemon.sprites.other["official-artwork"],
     document.getElementById("sprite-btn").src
@@ -59,7 +82,7 @@ async function update(busca) {
   document.getElementById("species").innerHTML = specie.genera[7].genus;
   document.getElementById("catch-rate").innerHTML = specie.capture_rate;
   document.getElementById("base-friendship").innerHTML = specie.base_happiness;
-  document.getElementById("growth-rate").innerHTML = specie.growth_rate.name;
+  document.getElementById("growth-rate").innerHTML = formatTxt(specie.growth_rate.name);
   document.getElementById("egg-cyles").innerHTML = specie.hatch_counter;
 
   document.getElementById(
@@ -76,26 +99,15 @@ async function update(busca) {
   } else {
     document.getElementById("type2").style.display = "none";
   }
-
-  //Exibição das habilidades
-  let abilitiesText = "";
-  pokemon.abilities.forEach((element) => {
-    if (element.is_hidden) {
-      abilitiesText += `<small>${element.ability.name}  (hidden ability)</small>`;
-    } else {
-      abilitiesText += `<spam>${element.slot}. ${element.ability.name}</spam><br>`;
-    }
-  });
-  document.getElementById("abilities").innerHTML = abilitiesText;
-
+ getAbilities(pokemon)
   //Exibição dos EVs
   let EVtext = "";
   pokemon.stats.forEach((element) => {
     if (element.effort != 0) {
       if (EVtext == "") {
-        EVtext = `${element.effort} ${element.stat.name}`;
+        EVtext = `${element.effort} ${formatTxt(element.stat.name)}`;
       } else {
-        EVtext += `,${element.effort} ${element.stat.name}`;
+        EVtext += `,${element.effort} ${formatTxt(element.stat.name)}`;
       }
     }
   });
