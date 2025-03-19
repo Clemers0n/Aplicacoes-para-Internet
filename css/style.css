@@ -38,6 +38,7 @@
   color: white;
   padding: 10px;
   border-radius: 5px;
+  text-align: center;
 }
 .indicators {
   text-align: center;
@@ -122,6 +123,7 @@
   width: 100%;
   padding: 20px;
   max-width: 1280px;
+  text-transform: capitalize;
 }
 /* Parte de Procura dos Pokemons */
 .c-pokemon-search {
@@ -142,6 +144,7 @@
   width: 100%;
 }
 .c-pokemon-btn button {
+  font-size: 1.2rem;
   width: 25%;
 }
 /* Parte de Info dos Pokemons */
@@ -154,7 +157,6 @@
   color: white;
 }
 .c-pokemon-name {
-  text-transform: capitalize;
   font-size: 2rem;
   margin-bottom: 10px;
 }
@@ -235,6 +237,7 @@
   display: inline-block;
   cursor: pointer;
   font-size: 1rem;
+  text-transform: none;
   margin-left: 5px;
 }
 .c-info-img { 
